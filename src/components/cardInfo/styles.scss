@@ -1,0 +1,29 @@
+.cardInfo {
+  width: 80%;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f3f3f3;
+
+  img {
+    width: 100%;
+  }
+
+  .cardInfo_container {
+    padding: 16px 12px 12px 12px;
+    display: flex;
+    flex-direction: column;
+
+    .cardInfo_title {
+      font-size: 16;
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-bottom: 12px;
+    }
+
+    .cardInfo_info {
+      font-size: 14;
+      font-weight: 400;
+      color: #505050;
+    }
+  }
+}

@@ -1,16 +1,16 @@
 'use client'
 
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import "./styles.scss";
 
-interface IButton {
+interface IButton extends React.ButtonHTMLAttributes<HTMLLIElement> {
   onClick?: any;
   children: any;
   withouBg?: boolean
 }
 
-function Button({ onClick, withouBg = false, children }: IButton) {
-  return <button onClick={() => onClick()} className={`button ${withouBg ? 'withouBg' : ''}`}>{children}</button>;
+function Button({ onClick, withouBg = false, className, children }: IButton) {
+  return <button onClick={() => onClick()} className={`button ${withouBg ? 'withouBg' : ''} ${className}`}>{children}</button>;
 }
 
 export default Button;

@@ -77,5 +77,21 @@
     display: flex;
     flex-direction: column;
     row-gap: 16px;
+    position: relative;
+
+    .gustavoLima {
+      position: absolute;
+      right: 0;
+      top: -151px;
+    }
+
+    .btnAction {
+      background: #00f0ff;
+      color: #1a2e70;
+
+      &:hover {
+        background: #00d1e0;
+      }
+    }
   }
 }
