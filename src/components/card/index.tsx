@@ -12,7 +12,7 @@ function Card({ title, infos, handleAction, img: Img }: any) {
     <div className='card'>
       <div className='img-title-container'>
         <div className='img-container'>
-          <Image src={Img} alt='auto' />
+          <Image src={Img} alt='auto' quality={100} />
         </div>
         <div className='title-container'>
           <div className='alignToRigth'>

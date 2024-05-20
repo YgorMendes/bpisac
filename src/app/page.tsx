@@ -22,6 +22,9 @@ import CardInfo from "@/components/cardInfo/cardInfo";
 import Furto from "@/assets/furto.png";
 import Pane from "@/assets/pane.png";
 import Protecao from "@/assets/protecao.png";
+import Guinchado from "@/assets/guinchado.png";
+import Cadastro from "@/assets/cadastro.png";
+import Isac from "@/assets/isac.png";
 import CheckIcon from "@/assets/check";
 import LineTitle from "@/assets/LineTitle";
 
@@ -215,7 +218,7 @@ export default function Home() {
             <LineTitle />
             <h2 className="carr-protection_title">SEGURO(RCF) PARA TERCEIROS</h2>
           </div>
-          <h3 className="carr-protection_subTitle">Seguro(RCF) para terceiros até 100 mil</h3>
+          <h3 className="carr-protection_subTitle">Seguro(RCF) para terceiros <span className="txt_dark-blue">até 100 mil</span></h3>
 
           <p className="carr-protection_description">Quer ficar despreocupado com custos inesperados e dar a si mesmo a tranquilidade que você merece? O nosso seguro para terceiros possui cobertura de até 100 mil reais!</p>
 
@@ -238,6 +241,87 @@ export default function Home() {
         </div>
       </section>
 
+      <section>
+        <div className="carr-protection padding">
+          <Image style={{ marginBottom: '18px' }} src={Guinchado} alt="Carro com proteção" />
+
+          <div className="carr-protection_container-title">
+            <LineTitle />
+            <h2 className="carr-protection_title">ASSISTÊNCIA 24 HORAS</h2>
+          </div>
+          <h3 className="carr-protection_subTitle"><span className="txt_dark-blue">Assistência 24h</span> em todo o território nacional</h3>
+
+          <p className="carr-protection_description">Oferecemos uma assistência completa e disponível 24 horas por dia, em todo o território nacional. Isso significa que você pode contar com ajuda profissional e imediata em qualquer lugar do país, não importa a hora ou situação.</p>
+
+          <ul>
+            <li>
+              <CheckIcon /> <p>Cobertura completa</p>
+            </li>
+            <li>
+              <CheckIcon /> <p>Atendimento humanizado</p>
+            </li>
+            <li>
+              <CheckIcon />  <p>Assistência rápida</p>
+            </li>
+          </ul>
+
+          <Button onClick={sendMessage}>FAÇA UMA COTAÇÃO AGORA</Button>
+        </div>
+      </section>
+
+      <section>
+        <div className="carr-protection padding bgGray">
+          <Image src={Cadastro} alt="Carro com proteção" quality={100} />
+
+          <div className="carr-protection_container-title">
+            <LineTitle />
+            <h2 className="carr-protection_title">CADASTRO FÁCIL</h2>
+          </div>
+          <h3 className="carr-protection_subTitle">Cadastro fácil, rápido e <span className="txt_dark-blue">sem análise</span> de perfil  do condutor</h3>
+
+          <p className="carr-protection_description">Não levamos em consideração o histórico do condutor para a contratação do seguro.
+            <br />
+            <br />
+            Tudo é feito de forma prática e rápida, sem burocracia e enrolação!
+          </p>
+
+          <ul>
+            <li>
+              <CheckIcon /> <p>Sem análise de perfil</p>
+            </li>
+            <li>
+              <CheckIcon /> <p>Sem análise ao SPC/SERASA</p>
+            </li>
+          </ul>
+
+          <Button onClick={sendMessage}>FAÇA UMA COTAÇÃO AGORA</Button>
+        </div>
+      </section>
+
+      <section className="consultant padding">
+        <h2 className="consultant_title txt_dark-blue">Alô Corretor / Consultor</h2>
+        <p className="consultant_info">
+          Você sabia que pode ser dono do seu <b>próprio negócio</b>, no mercado que mais cresce no Brasil?
+          <br />
+          <br />
+          Com a BEM PROTEGE você pode conquistar sua <b>independência financeira</b>, com flexibilidade de horários e possibilidade de aumento de ganhos todos os meses!
+          <br />
+          <br />
+          SEJA UM CONSULTOR <br />
+          PARTICIPE DO MELHOR TIME DE CONSULTORES DO BRASIL</p>
+
+        <iframe className="video" src="https://www.youtube.com/embed/jN1-2CGGVWQ?si=0osnoSVMEqQvthyL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <Button onClick={sendMessage}>SEJA UM CONSULTOR BP</Button>
+      </section>
+
+      <section className="padding insta bgGray">
+        <div className="insta_bg-img-container">
+          <Image src={Isac} alt="Isac Arena" quality={100} />
+          <div className="bgGradient" />
+          <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">100 mil seguidores</span> e mais de <span className="blue">2700 feedbacks</span></h2>
+          <Button className="BtnInsta" onClick={sendMessage}>arenabemprotege</Button>
+        </div>
+      </section>
     </main >
   );
 }
