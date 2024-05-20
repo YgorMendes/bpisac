@@ -310,7 +310,7 @@ export default function Home() {
           SEJA UM CONSULTOR <br />
           PARTICIPE DO MELHOR TIME DE CONSULTORES DO BRASIL</p>
 
-        <iframe className="video" src="https://www.youtube.com/embed/jN1-2CGGVWQ?si=0osnoSVMEqQvthyL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe className="video" src="https://www.youtube.com/embed/jN1-2CGGVWQ?si=0osnoSVMEqQvthyL" title="YouTube video player" />
         <Button onClick={sendMessage}>SEJA UM CONSULTOR BP</Button>
       </section>
 
