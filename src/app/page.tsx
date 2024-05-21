@@ -27,6 +27,7 @@ import Cadastro from "@/assets/cadastro.png";
 import Isac from "@/assets/isac.png";
 import CheckIcon from "@/assets/check";
 import LineTitle from "@/assets/LineTitle";
+import Footer from "@/components/footer/footer";
 
 
 export default function Home() {
@@ -322,6 +323,8 @@ export default function Home() {
           <Button className="BtnInsta" onClick={sendMessage}>arenabemprotege</Button>
         </div>
       </section>
+
+      <Footer />
     </main >
   );
 }
