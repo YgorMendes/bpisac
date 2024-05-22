@@ -7,19 +7,18 @@ import Question from "@/components/question/question";
 import dynamic from "next/dynamic";
 import Image from 'next/image';
 import Logo from "@/assets/logo";
-import { Button as AntButton, Menu, Carousel } from "antd";
 import { InstagramFilled, QuestionCircleOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import Card from "@/components/card";
 import Car from '../assets/car.png';
-import Moto from '../assets/moto.png';
+import Motocicle from '../assets/motocycle.webp';
 import Utilitarios from '../assets/utilitarios.png';
 import Truck from '../assets/truck.png';
 import Frota from '../assets/frota.png';
-import Guincho from '../assets/guincho.png';
-import Assistencia from '../assets/assistencia.png';
+import Guincho from '../assets/guincho.webp';
+import Assistencia from '../assets/callcenter.jpg';
 import CardInfo from "@/components/cardInfo/cardInfo";
-import Furto from "@/assets/furto.png";
-import Pane from "@/assets/pane.png";
+import Furto from "@/assets/furto.jpg";
+import Pane from "@/assets/pane.jpg";
 import Protecao from "@/assets/protecao.png";
 import Guinchado from "@/assets/guinchado.png";
 import Cadastro from "@/assets/cadastro.png";
@@ -50,28 +49,48 @@ export default function Home() {
     "Terceiros"
   ];
 
-  function sendMessageSpeed() {
-    window.open(
-      "https://api.whatsapp.com/send?phone=+5511983105012&text=Ol%C3%A1!%0A%0AGostaria+de+fazer+uma+cota%C3%A7%C3%A3o."
-    );
-  }
-
-  function sendMessageRacer() {
-    window.open(
-      "https://api.whatsapp.com/send?phone=+5511983105012&text=Ol%C3%A1!%0A%0AEstou+interessado+no+desconto+para+motorista+de+aplicativo."
-    );
-  }
-
-  function sendMessageHelp() {
-    window.open(
-      "https://api.whatsapp.com/send?phone=+5511983105012&text=Ol%C3%A1%2C+quero+tirar+uma+d%C3%BAvida."
-    );
-  }
   function sendMessage() {
     window.open(
-      "https://api.whatsapp.com/send?phone=+5511983105012&text=Ol%C3%A1!%0A%0AEstou+interessado+na+prote%C3%A7%C3%A3o+para+meu+carro+de+passeio."
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21"
     );
   }
+
+  function sendMessageCar() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21+🚗"
+    );
+  }
+
+  function sendMessageMotocycle() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21+🏍️"
+    );
+  }
+
+  function sendMessageUtilities() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21+%F0%9F%9A%90%F0%9F%9B%BB"
+    );
+  }
+
+  function sendMessageTruck() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21+%F0%9F%9A%9B"
+    );
+  }
+
+  function sendMessageFrota() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+FROTA%21+%F0%9F%9A%9B%F0%9F%9A%9B%F0%9F%9A%90%F0%9F%9A%90%F0%9F%9A%97%F0%9F%9A%97%F0%9F%9B%B5%F0%9F%9B%B5"
+    );
+  }
+
+  function sendMessageConsultant() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0AGostaria+de+saber+mais+sobre+essa+OPORTUNIDADE+%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB%0A%23querovoarnabp"
+    );
+  }
+
   const cards = [
     {
       title: 'CARROS',
@@ -80,7 +99,7 @@ export default function Home() {
         'Carros de leilão',
         'Carros de aplicativo'
       ],
-      handleAction: sendMessage,
+      handleAction: sendMessageCar,
       img: Car
     },
     {
@@ -90,8 +109,8 @@ export default function Home() {
         'Motos de aplicativo',
         'Motos de delivery'
       ],
-      handleAction: sendMessage,
-      img: Moto
+      handleAction: sendMessageMotocycle,
+      img: Motocicle
     },
     {
       title: 'UTILITÁRIOS',
@@ -100,7 +119,7 @@ export default function Home() {
         'Caminhonetes',
         'Vans de carga'
       ],
-      handleAction: sendMessage,
+      handleAction: sendMessageUtilities,
       img: Utilitarios
     },
     {
@@ -110,7 +129,7 @@ export default function Home() {
         'Agregados',
         'Implementos'
       ],
-      handleAction: sendMessage,
+      handleAction: sendMessageTruck,
       img: Truck
     },
     {
@@ -122,7 +141,7 @@ export default function Home() {
         'Frota para locações',
         'Condutor Livre',
       ],
-      handleAction: sendMessage,
+      handleAction: sendMessageFrota,
       img: Frota
     }
   ]
@@ -131,7 +150,7 @@ export default function Home() {
     <main className="home">
       <header className="header">
         <Logo />
-        <Button>
+        <Button onClick={sendMessage}>
           <WhatsAppOutlined className="header_icon" />
           FALAR AGORA
         </Button>
@@ -198,7 +217,6 @@ export default function Home() {
         <p className="show-me-details txt_dark-blue">CONFIRA TODOS OS BENEFÍCIOS</p>
 
         <div className="containerCardsInfo">
-
           <CardInfo
             img={{ src: Furto, alt: 'imagem de homem tentando furtar  carro' }}
             title="Furto e roubo"
@@ -323,7 +341,7 @@ export default function Home() {
           PARTICIPE DO MELHOR TIME DE CONSULTORES DO BRASIL</p>
 
         <iframe className="video" src="https://www.youtube.com/embed/jN1-2CGGVWQ?si=0osnoSVMEqQvthyL" title="YouTube video player" />
-        <Button onClick={sendMessage}>SEJA UM CONSULTOR BP</Button>
+        <Button onClick={sendMessageConsultant}>SEJA UM CONSULTOR BP</Button>
       </section>
 
       <section className="padding insta bgGray">

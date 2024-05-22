@@ -4,7 +4,7 @@ import Button from '../button/button';
 import Image from 'next/image';
 import CheckIcon from '@/assets/check';
 import LogoBlue from '@/assets/img-logo.png';
-import Gustavo from '@/assets/gustavo.png';
+import Gustavo from '@/assets/gustavo_lima.png';
 import { DownOutlined } from '@ant-design/icons';
 
 function Card({ title, infos, handleAction, handleGoToSection, img: Img }: any) {
