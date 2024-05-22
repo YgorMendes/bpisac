@@ -7,7 +7,7 @@ import LogoBlue from '@/assets/img-logo.png';
 import Gustavo from '@/assets/gustavo.png';
 import { DownOutlined } from '@ant-design/icons';
 
-function Card({ title, infos, handleAction, img: Img }: any) {
+function Card({ title, infos, handleAction, handleGoToSection, img: Img }: any) {
   return (
     <div className='card'>
       <div className='img-title-container'>
@@ -39,7 +39,7 @@ function Card({ title, infos, handleAction, img: Img }: any) {
       <div className='container-btns'>
         <Image src={Gustavo} alt='Cantor Gustavo Lima' className='gustavoLima' />
         <Button className='btnAction' onClick={handleAction}>FAZER COTAÇÃO</Button>
-        <Button withouBg={true}>Ver detalhes <DownOutlined /></Button>
+        <Button withouBg={true} onClick={handleGoToSection}>Ver detalhes <DownOutlined /></Button>
       </div>
     </div >
   )

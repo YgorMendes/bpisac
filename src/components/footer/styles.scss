@@ -35,8 +35,15 @@
       }
 
       p {
+        display: flex;
+        align-items: center;
         font-size: 14px;
         margin-bottom: 12px;
+
+        .footer_icon {
+          font-size: 23px;
+          margin-right: 8px;
+        }
       }
     }
   }

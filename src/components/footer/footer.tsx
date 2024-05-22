@@ -4,6 +4,8 @@ import Image from 'next/image';
 import WhiteLogo from '../../assets/whiteLogo.png';
 
 import './styles.scss';
+import { InstagramFilled } from '@ant-design/icons';
+import ZapIcon from '@/assets/ZapIcon';
 
 function Footer() {
   return (
@@ -15,8 +17,8 @@ function Footer() {
       <div className='footer_container-contant'>
         <div className='footer_contant'>
           <h3>Contatos</h3>
-          <p>arenabemprotege</p>
-          <p>11 96561-8576</p>
+          <p> <InstagramFilled className="footer_icon" /> arenabemprotege</p>
+          <p> <ZapIcon className="footer_icon"/> 11 96561-8576</p>
         </div>
 
         <div className='footer_contant'>

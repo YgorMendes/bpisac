@@ -33,39 +33,63 @@
   box-shadow: 0px 4px 4px 0px #00000020;
 
   .button {
+    position: relative;
     margin-top: 22px;
+
+    .header_icon {
+      position: absolute;
+      left: 0;
+      font-size: 23px;
+      margin-left: 16px;
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
   }
 }
 
 .section-presentation {
   color: #fff;
-  .title {
-    color: #fff;
+  position: relative;
+  overflow-x: hidden;
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: -400px;
+    z-index: -1;
   }
 
-  .section-presentation_subtitle {
-    margin: 14px 0 16px 0;
-  }
+  .presentation-contant {
+    z-index: 10;
 
-  .for-autos {
-    color: #00f0ff;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
+    .title {
+      color: #fff;
+    }
 
-  .section-presentation_show-coverage {
-    margin: 14px 0 22px 0;
-  }
+    .section-presentation_subtitle {
+      margin: 14px 0 16px 0;
+    }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 12px;
-  }
+    .for-autos {
+      color: #00f0ff;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
 
-  .button {
-    margin-top: 32px;
-    background: #114881;
+    .section-presentation_show-coverage {
+      margin: 14px 0 22px 0;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+
+    .button {
+      margin-top: 32px;
+      background: #114881;
+    }
   }
 }
 
@@ -214,7 +238,7 @@
       top: 32px;
     }
 
-    .BtnInsta {
+    .btnInsta {
       width: 90%;
       position: absolute;
       left: 50%;
@@ -228,6 +252,13 @@
         rgb(252, 204, 99) 100%
       );
       cursor: pointer;
+
+      .insta-icon {
+        position: absolute;
+        left: 0;
+        margin-left: 16px;
+        transform: scale(1.3);
+      }
     }
   }
 }

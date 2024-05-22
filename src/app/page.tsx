@@ -6,10 +6,9 @@ const Button = dynamic(() => import('@/components/button/button'), { ssr: false 
 import Question from "@/components/question/question";
 import dynamic from "next/dynamic";
 import Image from 'next/image';
-
 import Logo from "@/assets/logo";
 import { Button as AntButton, Menu, Carousel } from "antd";
-import { QuestionCircleOutlined } from "@ant-design/icons";
+import { InstagramFilled, QuestionCircleOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import Card from "@/components/card";
 import Car from '../assets/car.png';
 import Moto from '../assets/moto.png';
@@ -28,9 +27,19 @@ import Isac from "@/assets/isac.png";
 import CheckIcon from "@/assets/check";
 import LineTitle from "@/assets/LineTitle";
 import Footer from "@/components/footer/footer";
+import ZapIcon from "@/assets/ZapIcon";
+import { useRef } from "react";
 
 
 export default function Home() {
+  const targetRef: any = useRef(null);
+
+  const scrollToSection = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const items = [
     "Roubo , Furto , Colisão e incêndio ",
     "Fenômenos naturais",
@@ -39,17 +48,6 @@ export default function Home() {
     "Regulamentada pela SUSEP",
     "Guincho ilimitado para sinistro",
     "Terceiros"
-  ];
-
-  const questions = [
-    {
-      question: 'Você sabe que é SUSEP?',
-      response: 'SUSEP é o Órgão regulador de seguros, ou seja uma Garantia de que você realmente vai ser indenizado caso precise.'
-    },
-    {
-      question: 'E qual a diferença da Bem Protege Seguros e outras seguradoras?',
-      response: 'Nós da Bem Protege te proporcionamos a segurança de uma asseguradora com SUSEP, e sem análise de perfil e condutor.'
-    }
   ];
 
   function sendMessageSpeed() {
@@ -133,25 +131,38 @@ export default function Home() {
     <main className="home">
       <header className="header">
         <Logo />
-        <Button>FALAR AGORA</Button>
+        <Button>
+          <WhatsAppOutlined className="header_icon" />
+          FALAR AGORA
+        </Button>
       </header>
 
       <section className="section-presentation dark-blue padding-df">
-        <p>o SEGURO que conquistou o Brasil</p>
-        <Title>
-          <b><i className="blue-title">SEGURO<br /> AUTOS BP</i> <br /></b>
-          Simples, Justo e sem Burocracia
-        </Title>
-        <p className="section-presentation_subtitle">
-          Já são mais de <b>15 anos</b> oferecendo seguro e a melhor assistência 24 hrs em todo território nacional
-        </p>
-        <p className="for-autos">Carro, moto, vans e caminhão 100% da tabela Fipe</p>
+        <video
+          className="bg-video"
+          src="https://www.bemprotege.com.br/video/video-gusttavo-lima.mp4"
+          autoPlay
+          loop
+          muted
+          style={{ height: '100%' }}
+        />
+        <div className="presentation-contant">
+          <p>o SEGURO que conquistou o Brasil</p>
+          <Title>
+            <b><i className="blue-title">SEGURO<br /> AUTOS BP</i> <br /></b>
+            Simples, Justo e sem Burocracia
+          </Title>
+          <p className="section-presentation_subtitle">
+            Já são mais de <b>15 anos</b> oferecendo seguro e a melhor assistência 24 hrs em todo território nacional
+          </p>
+          <p className="for-autos">Carro, moto, vans e caminhão 100% da tabela Fipe</p>
 
-        <ul>
-          {items.map((item) => {
-            return <Item key={item} text={item} />
-          })}
-        </ul>
+          <ul>
+            {items.map((item) => {
+              return <Item key={item} text={item} />
+            })}
+          </ul>
+        </div>
       </section>
 
 
@@ -159,12 +170,12 @@ export default function Home() {
         <h2 className="title-autos-section">Seguro veicular <span className="txt_dark-blue">para todos os perfis</span></h2>
 
         {cards.map((card) => (
-          <Card key={card.title} title={card.title} infos={card.infos} img={card.img} handleAction={card.handleAction} />
+          <Card key={card.title} title={card.title} infos={card.infos} img={card.img} handleGoToSection={scrollToSection} handleAction={card.handleAction} />
         ))}
 
       </section>
 
-      <section className="section-institution">
+      <section className="section-institution" ref={targetRef}>
         <h2>Vídeo institucional</h2>
         <iframe className="video" src="https://www.youtube.com/embed/j839KvpY36Q?si=1GhTlBB7h4FAfvhz" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 
@@ -320,7 +331,9 @@ export default function Home() {
           <Image src={Isac} alt="Isac Arena" quality={100} />
           <div className="bgGradient" />
           <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">100 mil seguidores</span> e mais de <span className="blue">2700 feedbacks</span></h2>
-          <Button className="BtnInsta" onClick={sendMessage}>arenabemprotege</Button>
+          <Button className="btnInsta" onClick={() => window.location.href = 'https://www.instagram.com/arenabemprotege/'}>
+            <InstagramFilled className="insta-icon" />
+            arenabemprotege</Button>
         </div>
       </section>
 
