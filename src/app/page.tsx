@@ -196,7 +196,7 @@ export default function Home() {
 
       <section className="section-institution" ref={targetRef}>
         <h2>Vídeo institucional</h2>
-        <iframe className="video" src="https://www.youtube.com/embed/j839KvpY36Q?si=1GhTlBB7h4FAfvhz" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+        <iframe className="video" src="https://www.youtube.com/embed/Bo8MRmxfiCk?si=ia_Zixwr0pp9iiB9" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 
         <h2 className="section-institution_title-info">
           São mais de 15 anos de mercado, a Bem Protege é um grupo que possui mais de 20 empresas. <span className="txt_dark-blue">Somos líder em Seguro Autos</span>.
