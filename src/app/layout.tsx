@@ -3,7 +3,7 @@ import "./globals.scss";
 import "./page.scss";
 
 export const metadata: Metadata = {
-  title: "bpisac",
+  title: "segurobp",
   description: "Seguros automotivos.",
 };
 
