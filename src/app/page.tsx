@@ -3,11 +3,10 @@
 import Title from "@/components/title/title";
 import Item from "@/components/item/item";
 const Button = dynamic(() => import('@/components/button/button'), { ssr: false });
-import Question from "@/components/question/question";
 import dynamic from "next/dynamic";
 import Image from 'next/image';
 import Logo from "@/assets/logo";
-import { InstagramFilled, QuestionCircleOutlined, WhatsAppOutlined } from "@ant-design/icons";
+import { InstagramFilled, WhatsAppOutlined } from "@ant-design/icons";
 import Card from "@/components/card";
 import Car from '../assets/car.png';
 import Motocicle from '../assets/motocycle.webp';
@@ -26,11 +25,11 @@ import Isac from "@/assets/isac.png";
 import CheckIcon from "@/assets/check";
 import LineTitle from "@/assets/LineTitle";
 import Footer from "@/components/footer/footer";
-import ZapIcon from "@/assets/ZapIcon";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function Home() {
+  const [isDesktop, setIsDesktop] = useState(false);
   const targetRef: any = useRef(null);
 
   const scrollToSection = () => {
@@ -144,11 +143,22 @@ export default function Home() {
       handleAction: sendMessageFrota,
       img: Frota
     }
-  ]
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      window.innerWidth >= 980
+        ? setIsDesktop(true)
+        : setIsDesktop(false);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+  }, []);
 
   return (
     <main className="home">
-      <header className="header">
+      <header className={`header ${isDesktop ? 'isDesktop' : ''}`}>
         <Logo />
         <Button onClick={sendMessage}>
           <WhatsAppOutlined className="header_icon" />
@@ -156,14 +166,13 @@ export default function Home() {
         </Button>
       </header>
 
-      <section className="section-presentation dark-blue padding-df">
+      <section className={`section-presentation dark-blue padding ${isDesktop ? 'isDesktop' : ''}`}>
         <video
           className="bg-video"
           src="https://www.bemprotege.com.br/video/video-gusttavo-lima.mp4"
           autoPlay
           loop
           muted
-          style={{ height: '100%' }}
         />
         <div className="presentation-contant">
           <p>o SEGURO que conquistou o Brasil</p>
@@ -188,10 +197,11 @@ export default function Home() {
       <section className="autos-section bgGray">
         <h2 className="title-autos-section">Seguro veicular <span className="txt_dark-blue">para todos os perfis</span></h2>
 
-        {cards.map((card) => (
-          <Card key={card.title} title={card.title} infos={card.infos} img={card.img} handleGoToSection={scrollToSection} handleAction={card.handleAction} />
-        ))}
-
+        <div>
+          {cards.map((card) => (
+            <Card key={card.title} title={card.title} infos={card.infos} img={card.img} handleGoToSection={scrollToSection} handleAction={card.handleAction} />
+          ))}
+        </div>
       </section>
 
       <section className="section-institution" ref={targetRef}>

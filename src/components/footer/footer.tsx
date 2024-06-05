@@ -17,8 +17,8 @@ function Footer() {
       <div className='footer_container-contant'>
         <div className='footer_contant'>
           <h3>Contatos</h3>
-          <p> <InstagramFilled className="footer_icon" /> arenabemprotege</p>
-          <p> <ZapIcon className="footer_icon"/> 11 96561-8576</p>
+          <p onClick={() => window.location.href = 'https://www.instagram.com/arenabemprotege/'}> <InstagramFilled className="footer_icon" /> arenabemprotege</p>
+          <p> <ZapIcon className="footer_icon" /> 11 96561-8576</p>
         </div>
 
         <div className='footer_contant'>

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,600;1,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap");
 
-.padding-df {
-  padding: 44px 29px;
-}
 .blue-title {
   color: #00f0ff;
   font-weight: 800;
@@ -20,7 +17,6 @@
 }
 
 .header {
-  // height: 64px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,6 +27,10 @@
   z-index: 20;
   background-color: #fff;
   box-shadow: 0px 4px 4px 0px #00000020;
+
+  &.isDesktop {
+    padding: 32px 64px 12px 64px;
+  }
 
   .button {
     position: relative;
@@ -50,17 +50,29 @@
 .section-presentation {
   color: #fff;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .bg-video {
     position: absolute;
+    height: 100%;
     top: 0;
     left: -400px;
     z-index: -1;
+    overflow: hidden;
+
+    @media (min-width: 980px) {
+      width: 100vw !important;
+      object-fit: cover;
+      left: 0;
+    }
   }
 
   .presentation-contant {
     z-index: 10;
+
+    @media (min-width: 980px) {
+      width: 50%;
+    }
 
     .title {
       color: #fff;
@@ -83,7 +95,7 @@
     ul {
       display: flex;
       flex-direction: column;
-      row-gap: 12px;
+      row-gap: 8px;
     }
 
     .button {
@@ -100,24 +112,55 @@
 .title-autos-section {
   font-size: 20px;
   font-weight: 700;
-  margin: 44px 0 22px 0;
+  margin: 44px 0 22px 29px;
+
+  @media (min-width: 980px) {
+    margin: 44px 0 22px 64px;
+  }
 }
 
 .autos-section {
-  padding: 0 29px;
   display: flex;
   flex-direction: column;
-  row-gap: 32px;
+  width: 100%;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    padding: 0 29px 44px 29px;
+    gap: 32px;
+  }
+
+  @media (min-width: 980px) {
+    & > div {
+      padding: 0 64px 44px 64px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 26px;
+      justify-content: center;
+    }
+  }
 }
 
 .video {
   width: 100% !important;
+  max-width: 564px;
   height: 220px;
   margin: 22px 0 44px 0;
+
+  @media (min-width: 980px) {
+    height: 320px;
+  }
 }
 
 .section-institution {
   padding: 44px 29px;
+
+  @media (min-width: 980px) {
+    padding: 44px 64px;
+  }
 
   .section-institution_title-info {
     font-size: 22px;
@@ -142,19 +185,32 @@
     justify-content: center;
     align-items: center;
     row-gap: 22px;
+
+    @media (min-width: 980px) {
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
   }
 }
 
 .padding {
   padding: 44px 29px;
+
+  @media (min-width: 980px) {
+    padding: 44px 64px;
+  }
 }
 .carr-protection {
   .carr-protection_container-title {
+    max-width: 800px;
     display: flex;
     align-items: center;
     margin-bottom: 16px;
 
     .carr-protection_title {
+      max-width: 800px;
       font-size: 22px;
       margin-left: 12px;
       color: #2b2b2b;
@@ -162,12 +218,14 @@
   }
 
   .carr-protection_subTitle {
+    max-width: 800px;
     font-size: 20px;
     margin-bottom: 16px;
     color: #505050;
   }
 
   .carr-protection_description {
+    max-width: 800px;
     font-size: 16px;
     color: #505050;
     margin-bottom: 16px;
@@ -189,10 +247,21 @@
       }
     }
   }
+
+  @media (min-width: 980px) {
+    .button {
+      max-width: 300px;
+    }
+  }
 }
 
 .consultant {
   padding: 44px 29px;
+  max-width: 800px;
+
+  @media (min-width: 980px) {
+    padding: 44px 64px;
+  }
 
   .consultant_title {
     font-size: 20px;
@@ -203,12 +272,31 @@
   .consultant_info {
     color: #505050;
   }
+
+  @media (min-width: 980px) {
+    .button {
+      max-width: 300px;
+    }
+  }
 }
 .insta {
   border-radius: 4px;
+  @media (min-width: 980px) {
+    display: flex;
+    justify-content: center;
+  }
 
   .insta_bg-img-container {
     position: relative;
+
+    @media (min-width: 980px) {
+      max-width: 480px;
+
+      img {
+        width: 100%;
+        height: 500px !important;
+      }
+    }
 
     img {
       width: 100%;

@@ -6,6 +6,10 @@
   color: #fff;
   display: flex;
   flex-direction: column;
+  
+  @media (min-width: 980px) {
+    max-width: 360px;
+  }
 
   .img-title-container {
     width: 100%;
