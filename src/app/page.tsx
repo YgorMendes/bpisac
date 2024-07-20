@@ -357,7 +357,7 @@ export default function Home() {
         <div className="insta_bg-img-container">
           <Image src={Isac} alt="Isac Arena" quality={100} />
           <div className="bgGradient" />
-          <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">110 mil seguidores</span> e mais de <span className="blue">2800 feedbacks</span></h2>
+          <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">110 mil seguidores</span> e mais de <span className="blue">2950 feedbacks</span></h2>
           <Button className="btnInsta" onClick={() => window.location.href = 'https://www.instagram.com/arenabemprotege/'}>
             <InstagramFilled className="insta-icon" />
             arenabemprotege</Button>
