@@ -203,6 +203,11 @@
   }
 }
 .carr-protection {
+  img {
+    width: 356px;
+    height: 195px;
+    object-fit: contain;
+  }
   .carr-protection_container-title {
     max-width: 800px;
     display: flex;

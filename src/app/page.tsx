@@ -19,6 +19,7 @@ import CardInfo from "@/components/cardInfo/cardInfo";
 import Furto from "@/assets/furto.jpg";
 import Pane from "@/assets/pane.jpg";
 import Protecao from "@/assets/protecao.png";
+import policia from "@/assets/polices.png"
 import Guinchado from "@/assets/guinchado.png";
 import Cadastro from "@/assets/cadastro.png";
 import Isac from "@/assets/isac.png";
@@ -51,6 +52,12 @@ export default function Home() {
   function sendMessage() {
     window.open(
       "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Arena%0A%0APreciso+de+SEGURO+para+minha+CONQUISTA%21"
+    );
+  }
+
+  function sendMessagePolices() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5511965618576&text=Ol%C3%A1+Fa%C3%A7o+parte+da+SEGURAN%C3%87A+P%C3%9ABLICA+e+preciso+ASSEGURAR+minha+conquista+%F0%9F%91%AE"
     );
   }
 
@@ -194,13 +201,45 @@ export default function Home() {
       </section>
 
 
-      <section className="autos-section bgGray">
+      <section className="autos-section">
         <h2 className="title-autos-section">Seguro veicular <span className="txt_dark-blue">para todos os perfis</span></h2>
 
         <div>
           {cards.map((card) => (
             <Card key={card.title} title={card.title} infos={card.infos} img={card.img} handleGoToSection={scrollToSection} handleAction={card.handleAction} />
           ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="carr-protection padding bgGray">
+          <Image src={policia} alt="Carros da policia e de bombeiro" />
+
+          <div className="carr-protection_container-title">
+            <LineTitle color="#9e1e1b" />
+            <LineTitle color="#373737" style={{ marginLeft: '-8px' }} />
+            <h2 className="carr-protection_title">Desconto Exclusivo</h2>
+          </div>
+          <h3 className="carr-protection_subTitle">Proteção Especial para Quem Protege a Sociedade</h3>
+
+          <p className="carr-protection_description">
+            Se você é Policial Militar, Policial Civil ou Bombeiro, temos uma oferta exclusiva para você <br /><br />
+            Oferecemos descontos especiais em nosso seguro auto, reconhecendo e valorizando o importante serviço que você presta à comunidade. Garanta a proteção do seu veículo com condições diferenciadas, porque quem dedica a vida para proteger os outros merece estar sempre protegido.
+          </p>
+
+          <ul>
+            <li>
+              <CheckIcon /> <p>Policial Militar</p>
+            </li>
+            <li>
+              <CheckIcon /> <p>Policial Civil</p>
+            </li>
+            <li>
+              <CheckIcon />  <p>Bombeiro</p>
+            </li>
+          </ul>
+
+          <Button onClick={sendMessagePolices}>FAÇA UMA COTAÇÃO AGORA</Button>
         </div>
       </section>
 

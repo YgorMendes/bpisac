@@ -6,7 +6,8 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  
+  box-shadow: 0px 6px 9px 0px #949494;
+
   @media (min-width: 980px) {
     max-width: 360px;
   }
