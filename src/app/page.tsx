@@ -174,10 +174,6 @@ export default function Home() {
 
       setFeedbaks(dataFeedbacks[0].data.feedbacks)
       setfollowers(dataFollowers[0]?.data.followers)
-      console.log({
-        feedbacks: dataFeedbacks[0].data.feedbacks,
-        followers: dataFollowers[0]?.data.followers
-      })
     }
     getPrismicValues();
   }, []);
