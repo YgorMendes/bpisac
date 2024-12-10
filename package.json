@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@prismicio/client": "^7.13.0",
+    "@prismicio/next": "^1.7.1",
+    "@prismicio/react": "^2.9.1",
     "@vercel/analytics": "^1.3.1",
     "antd": "^5.12.2",
     "next": "14.0.2",
@@ -17,12 +21,14 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.59",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
     "sass": "^1.69.5",
+    "slice-machine-ui": "^2.10.5",
     "typescript": "^5"
   }
 }

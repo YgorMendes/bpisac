@@ -27,10 +27,13 @@ import CheckIcon from "@/assets/check";
 import LineTitle from "@/assets/LineTitle";
 import Footer from "@/components/footer/footer";
 import { useEffect, useRef, useState } from "react";
+import { createClient } from "@/prismicio";
 
 
 export default function Home() {
   const [isDesktop, setIsDesktop] = useState(false);
+  const [feedbacks, setFeedbaks] = useState<string | null>(null);
+  const [followers, setfollowers] = useState<string | null>(null);
   const targetRef: any = useRef(null);
 
   const scrollToSection = () => {
@@ -161,6 +164,22 @@ export default function Home() {
 
     handleResize();
     window.addEventListener('resize', handleResize);
+  }, []);
+
+  const client = createClient();
+  useEffect(() => {
+    async function getPrismicValues() {
+      const dataFeedbacks = await client.getAllByType('feedbacks');
+      const dataFollowers = await client.getAllByType('followers');
+
+      setFeedbaks(dataFeedbacks[0].data.feedbacks)
+      setfollowers(dataFollowers[0]?.data.followers)
+      console.log({
+        feedbacks: dataFeedbacks[0].data.feedbacks,
+        followers: dataFollowers[0]?.data.followers
+      })
+    }
+    getPrismicValues();
   }, []);
 
   return (
@@ -396,7 +415,7 @@ export default function Home() {
         <div className="insta_bg-img-container">
           <Image src={Isac} alt="Isac Arena" quality={100} />
           <div className="bgGradient" />
-          <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">110 mil seguidores</span> e mais de <span className="blue">3070 Feedbacks</span></h2>
+          <h2 className="insta_title">Acompanhe nosso trabalho no Instagram Já são mais de <span className="blue">{followers || '100 mil seguidores'}</span> e mais de <span className="blue">{feedbacks || '3000 Feedbacks'}</span></h2>
           <Button className="btnInsta" onClick={() => window.location.href = 'https://www.instagram.com/arenabemprotege/'}>
             <InstagramFilled className="insta-icon" />
             arenabemprotege</Button>
