@@ -180,29 +180,30 @@ export default function Home() {
 
   return (
     <main className="home">
-      <header className={`header ${isDesktop ? 'isDesktop' : ''}`}>
+       <header className={`header ${isDesktop ? 'isDesktop' : ''}`}>
         <Logo />
-        <Button onClick={sendMessage}>
+        {/* <Button onClick={sendMessage}>
           <WhatsAppOutlined className="header_icon" />
           FALAR AGORA
-        </Button>
+        </Button> */}
       </header>
 
       <section className={`section-presentation dark-blue padding ${isDesktop ? 'isDesktop' : ''}`}>
-        <video
+        {/* <video
           className="bg-video"
           src="https://www.bemprotege.com.br/video/video-gusttavo-lima.mp4"
           autoPlay
           loop
           muted
-        />
+        /> */}
         <div className="presentation-contant">
-          <p>o SEGURO que conquistou o Brasil</p>
+          {/* <p>o SEGURO que conquistou o Brasil</p> */}
           <Title>
-            <b><i className="blue-title">SEGURO<br /> AUTOS BP</i> <br /></b>
-            Simples, Justo e sem Burocracia
+          Produto pausado!
+            {/* <b><i className="blue-title">SEGURO<br /> AUTOS BP</i> <br /></b>
+            Simples, Justo e sem Burocracia */}
           </Title>
-          <p className="section-presentation_subtitle">
+          {/* <p className="section-presentation_subtitle">
             Já são mais de <b>15 anos</b> oferecendo seguro e a melhor assistência 24 hrs em todo território nacional
           </p>
           <p className="for-autos">Carro, moto, vans e caminhão 100% da tabela Fipe</p>
@@ -211,10 +212,10 @@ export default function Home() {
             {items.map((item) => {
               return <Item key={item} text={item} />
             })}
-          </ul>
+          </ul> */}
         </div>
       </section>
-
+{/*
 
       <section className="autos-section">
         <h2 className="title-autos-section">Seguro veicular <span className="txt_dark-blue">para todos os perfis</span></h2>
@@ -418,7 +419,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      <Footer /> */}
     </main >
   );
 }
